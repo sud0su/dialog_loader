@@ -1,4 +1,5 @@
 # dialog_loader
+[![pub package](https://img.shields.io/pub/v/flutter_toggle_tab.svg)](https://pub.dev/packages/flutter_toggle_tab)
 
 An easy way to create a loader, you can easily combine the loader with popular state management.
 
@@ -98,3 +99,17 @@ void _update() {
 | autoClose  |  Boolean value to indicate auto Close the loader when the processing is complete | False   | true  |
 | barrierDismissible  |  Boolean value to indicate barrierDimisable on dialog | False   | false  |
 
+---
+
+## Donate
+You like the package ? Buy me a coffee :)
+
+
+<a href="https://ko-fi.com/sud0su" target="_blank">
+    <img src="https://raw.githubusercontent.com/hacktons/convex_bottom_bar/master/doc/donate-kofi1.png" alt="buymeacoffe" style="vertical-align:top; margin:8px" height="40">
+</a>
+  
+<a href="https://www.buymeacoffee.com/sud0su" target="_blank">
+    <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="buymeacoffe" style="vertical-align:top; margin:8px" height="40">
+</a>
+  
