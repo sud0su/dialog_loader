@@ -1,5 +1,9 @@
 # dialog_loader
-[![pub package](https://img.shields.io/pub/v/flutter_toggle_tab.svg)](https://pub.dev/packages/flutter_toggle_tab)
+
+<p align="left">
+<a href="https://github.com/sud0su/dialog_loader"><img src="https://img.shields.io/pub/v/flutter_toggle_tab.svg" alt="Pub Package"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+</p>
 
 An easy way to create a loader, you can easily combine the loader with popular state management.
 
