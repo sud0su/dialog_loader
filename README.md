@@ -28,11 +28,11 @@ import 'package:dialog_loader/dialog_loader.dart';
 
  LoaderTheme.dialogDefault         |  LoaderTheme.dialogCircle
 :-------------------------:|:-------------------------:
-![](./assets/1.gif) | ![](./assets/2.gif)
+![](https://raw.githubusercontent.com/sud0su/dialog_loader/main/assets/1.gif) | ![](https://raw.githubusercontent.com/sud0su/dialog_loader/main/assets/2.gif)
 
  LoaderTheme.dialogDefault (left and right icon)         |  LoaderTheme.dialogCircle (Image network)
 :-------------------------:|:-------------------------:
-![](./assets/3.gif) | ![](./assets/4.gif)
+![](https://raw.githubusercontent.com/sud0su/dialog_loader/main/assets/3.gif) | ![](https://raw.githubusercontent.com/sud0su/dialog_loader/main/assets/3.gif)
 
 **with the dialog loader package, you can easily combine with popular state management on handling state updating, like loading, error, and success state.**
 ## Usage
