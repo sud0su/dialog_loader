@@ -1,0 +1,19 @@
+name: dialog_loader
+description: An easy way to create a loader.
+version: 0.0.1
+author: Razinal Rahmat<ahmat.raz@gmail.com>
+homepage: https://github.com/sud0su/dialog_loader
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
