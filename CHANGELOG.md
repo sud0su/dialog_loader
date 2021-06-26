@@ -3,3 +3,5 @@
 * Add new theme of the loader
 * Making loader customizing easier with changing params from String to Widget,
 * make properties more readable 
+* ****
+* update README.md
