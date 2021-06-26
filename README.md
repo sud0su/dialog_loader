@@ -5,7 +5,6 @@ An easy way to create a loader, you can easily combine the loader with popular s
 
 
 ## New Features 💥
-****
 - The barrierDismissible default set to false on loading and will be automatically set to true when the load is complete.
 - Asset file / Image network support on the loader.
   
@@ -37,7 +36,7 @@ import 'package:dialog_loader/dialog_loader.dart';
 
 **with the dialog loader package, you can easily combine the loader with popular state management on handling state updating, like loading, error, and success state.**
 ## Usage
-****
+
 [You can review the example of usage from the Github repo.](https://github.com/sud0su/dialog_loader/tree/main/example/)
 
 Create a new instance, pass the context as parameter.
