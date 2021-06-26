@@ -10,7 +10,7 @@ class DialogLoader {
   final ValueNotifier<Widget> _leftIcon = ValueNotifier<Widget>(Container());
 
   final ValueNotifier<Widget> _rightIcon = ValueNotifier<Widget>(Container());
-  final ValueNotifier<bool> _closeOnClick = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> _barrierDismissible = ValueNotifier<bool>(false);
 
   bool _dialogIsOpen = false;
   late BuildContext _context;
@@ -23,13 +23,13 @@ class DialogLoader {
     Widget? title,
     Widget? leftIcon,
     Widget? rightIcon,
-    bool closeOnClick: false,
+    bool barrierDismissible: false,
     bool autoClose: true,
   }) {
     _title.value = title ?? Container();
     _leftIcon.value = leftIcon ?? Container();
     _rightIcon.value = rightIcon ?? Container();
-    _closeOnClick.value = closeOnClick;
+    _barrierDismissible.value = barrierDismissible;
     if (autoClose) _closeAfterUpdate();
   }
 
@@ -54,7 +54,6 @@ class DialogLoader {
     Widget? title,
     Widget? leftIcon,
     Widget? rightIcon,
-    bool? closeOnClick,
     Color backgroundColor: Colors.white,
     Color barrierColor: Colors.black26,
     bool barrierDismissible: false,
@@ -63,7 +62,7 @@ class DialogLoader {
   }) {
     _dialogIsOpen = true;
     _title.value = title ?? Container();
-    _closeOnClick.value = closeOnClick ?? false;
+    _barrierDismissible.value = barrierDismissible;
     _rightIcon.value = rightIcon ?? Container();
     _leftIcon.value = leftIcon ?? Container();
 
@@ -75,11 +74,11 @@ class DialogLoader {
           children: [
             AnimatedBuilder(
               animation: Listenable.merge(
-                [_title, _leftIcon, _rightIcon, _closeOnClick],
+                [_title, _leftIcon, _rightIcon, _barrierDismissible],
               ),
               builder: (BuildContext context, _) {
                 return GestureDetector(
-                  onTap: () => _closeOnClick.value ? close() : null,
+                  onTap: () => _barrierDismissible.value ? close() : null,
                   child: theme == LoaderTheme.dialogDefault
                       ? DefaultTheme(
                           context: _context,

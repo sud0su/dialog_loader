@@ -1,7 +1,6 @@
 name: dialog_loader
-description: An easy way to create a loader.
+description: An easy way to create a loader, with the dialog loader package, you can easily combine with popular state management on handling state updating, like loading, error, and success state..
 version: 0.0.1
-author: Razinal Rahmat<ahmat.raz@gmail.com>
 homepage: https://github.com/sud0su/dialog_loader
 
 environment:
