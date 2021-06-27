@@ -1,7 +1,7 @@
 # dialog_loader
 
 <p align="left">
-<a href="https://github.com/sud0su/dialog_loader"><img src="https://img.shields.io/pub/v/flutter_toggle_tab.svg" alt="Pub Package"></a>
+<a href="https://github.com/sud0su/dialog_loader"><img src="https://img.shields.io/pub/v/dialog_loader.svg" alt="Pub Package"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
@@ -92,9 +92,9 @@ void _update() {
 |  Name | Description   | Required   | Default   |
 | ------------ | ------------ | ------------ | ------------ |
 | theme  | Loader theme | False   | LoaderTheme.dialogDefault,  |
-| title  | Dialog title |  False  |   |
-| leftIcon  | Icon on the left side of the loader, and at the top for dialogCircle theme | False   |  |
-| rightIcon  | Icon on the right side of the loader | False   |  |
+| title  | Widget title |  False  |  Container() |
+| leftIcon  | Widget on the left side of the loader, and at the top for dialogCircle theme | False   | Container() |
+| rightIcon  | Widget on the right side of the loader | False   | Container() |
 | barrierColor  | Barrier Color of the loader| False   | Colors.black26 |
 | borderRadius  | Double value to indicate the dialog border radius | False   |  5.0 |
 | backgroundColor  | Double value to indicate the dialog background color | False   | Colors.white  |
