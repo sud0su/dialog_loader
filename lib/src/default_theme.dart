@@ -46,6 +46,10 @@ class DefaultTheme extends StatelessWidget {
             ),
           ),
           child: Container(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width - 40,
+              maxHeight: MediaQuery.of(context).size.height - 40,
+            ),
             padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(_borderRadius),

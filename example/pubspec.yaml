@@ -24,7 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  dialog_loader: ^0.0.2
+  dialog_loader:
+    path: "../../dialog_loader"
 
 dev_dependencies:
   flutter_test:

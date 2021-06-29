@@ -7,6 +7,34 @@ void main() {
   runApp(MyApp());
 }
 
+class ShowLoader {
+  static late DialogLoader _dialogLoader;
+
+  Future<void> show(BuildContext context) async {
+    _dialogLoader = DialogLoader(context: context);
+    _dialogLoader.show(
+      theme: LoaderTheme.dialogCircle,
+      title: Text("Loading"),
+      leftIcon: CircularProgressIndicator(),
+    );
+  }
+
+  void update(String title, IconData leftIcon, {Color colors: Colors.black87}) {
+    _dialogLoader.update(
+      title: Text(
+        title,
+        style: TextStyle(color: colors),
+      ),
+      leftIcon: Icon(
+        leftIcon,
+        color: colors,
+      ),
+      autoClose: false,
+      barrierDismissible: true,
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,36 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   TextEditingController form1 = TextEditingController();
   TextEditingController form2 = TextEditingController();
+  final ShowLoader showLoader = ShowLoader();
 
   @override
   Widget build(BuildContext context) {
-    DialogLoader dialogLoader = DialogLoader(context: context);
-
-    _dialogLoader(context) async {
-      dialogLoader.show(
-          theme: LoaderTheme.dialogDefault,
-          title: Text("Loading"),
-          leftIcon: SizedBox(
-            child: CircularProgressIndicator(),
-            height: 25.0,
-            width: 25.0,
-          ),
-          rightIcon: Icon(Icons.info));
-    }
-
-    void _update() {
-      _dialogLoader(context);
-      Future.delayed(const Duration(seconds: 4), () {
-        dialogLoader.update(
-          title: Text("Done"),
-          leftIcon: Icon(Icons.done),
-          rightIcon: Icon(Icons.supervisor_account),
-          autoClose: false,
-          barrierDismissible: true,
-        );
-      });
-    }
-
     return Scaffold(
       body: Container(
         padding: EdgeInsets.all(20.0),
@@ -85,9 +87,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               child: Text("Sign In"),
               onPressed: () async {
-                _update();
                 form1.clear();
                 form2.clear();
+
+                // call the laoder
+                showLoader.show(context);
+
+                // change the loader
+                Future.delayed(const Duration(seconds: 4), () {
+                  // you don't need to add the time of delay, this is just for the demo
+                  showLoader.update(
+                    "There is no user record corresponding to this identifier. The user may have been deleted.",
+                    Icons.error,
+                    colors: Colors.red,
+                  );
+                });
               },
             ),
           ],

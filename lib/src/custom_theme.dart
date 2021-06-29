@@ -7,6 +7,7 @@ class CircleTheme extends StatelessWidget {
     required ValueNotifier<Widget> leftIcon,
     required ValueNotifier<Widget> title,
     required ValueNotifier<Widget> rightIcon,
+    required ValueNotifier<double> avatarRadius,
     required Color backgroundColor,
     required Color barrierColor,
     required double elevation,
@@ -19,11 +20,13 @@ class CircleTheme extends StatelessWidget {
         _barrierColor = barrierColor,
         _elevation = elevation,
         _borderRadius = borderRadius,
+        _avatarRadius = avatarRadius,
         super(key: key);
 
   final BuildContext _context;
   final ValueNotifier<Widget> _leftIcon;
   final ValueNotifier<Widget> _title;
+  final ValueNotifier<double> _avatarRadius;
   // ignore: unused_field
   final ValueNotifier<Widget> _rightIcon;
 
@@ -34,7 +37,6 @@ class CircleTheme extends StatelessWidget {
 
   static const double padding = 20;
   static const double toppadding = 30;
-  static const double avatarRadius = 45;
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +51,17 @@ class CircleTheme extends StatelessWidget {
           child: Stack(
             children: [
               Container(
+                constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width - 40,
+                  maxHeight: MediaQuery.of(context).size.height - 40,
+                ),
                 padding: EdgeInsets.only(
                   left: padding,
                   top: toppadding,
                   right: padding,
                   bottom: padding,
                 ),
-                margin: EdgeInsets.only(top: avatarRadius),
+                margin: EdgeInsets.only(top: _avatarRadius.value),
                 decoration: BoxDecoration(
                   color: _backgroundColor,
                   borderRadius: BorderRadius.circular(_borderRadius),
@@ -77,12 +83,11 @@ class CircleTheme extends StatelessWidget {
                   ),
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
-                    radius: avatarRadius,
+                    radius: _avatarRadius.value,
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(
-                        Radius.circular(avatarRadius),
+                        Radius.circular(_avatarRadius.value),
                       ),
-                      // child: Image.asset("assets/model.jpeg"),
                       child: _leftIcon.value,
                     ),
                   ),

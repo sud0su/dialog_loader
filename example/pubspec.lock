@@ -53,10 +53,10 @@ packages:
   dialog_loader:
     dependency: "direct main"
     description:
-      name: dialog_loader
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.2"
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.3+3"
   fake_async:
     dependency: transitive
     description:
